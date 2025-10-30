@@ -2,4 +2,445 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--cover-image);
+  background-color: var(--background-color);
+  background-position: center;
+  background-size: cover;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+
+
+.header {
+  block-size: 100vh;
+  min-height: 668px;
+  padding: var(--main-gap);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  gap: var(--main-gap);
+}
+
+.header::before, 
+.header::after {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border: 1px solid rgb(var(--detail-color));
+}
+
+.header::before {
+  top: var(--main-gap);
+  right: var(--main-gap);
+  border-left: none;
+  border-bottom: none;
+}
+
+.header::after {
+  bottom: var(--main-gap);
+  left: var(--main-gap);
+  border-right: none;
+  border-top: none;
+}
+
+.rec-element {
+  position: absolute;
+  color: var(--accent-color);
+  font-family: var(--main-font);
+  font-weight: var(--regular-font);
+  font-size: var(--font-size);
+  justify-self: end;
+  align-self: start;
+  top: var(--main-gap);
+  right: 20px;
+}
+
+.rec-element::after {
+  content: "";
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  margin-left: var(--main-gap);
+  margin-bottom: 2px;
+  margin-right: -1px;
+}
+
+.theme-light .rec-element {
+  display: none;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  grid-column: 4;
+  grid-row: 1;
+  margin-top: var(--main-gap);
+}
+
+.header__theme-menu-list {
+  display: grid;
+  justify-content: space-around;
+  gap: var(--main-gap);
+}
+
+.header__theme-menu-button {
+  font-family: var(--main-font);
+  font-weight: var(--regular-font);
+  font-size: var(--font-size);
+  color: rgb(var(--detail-color));
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  padding: 0px 13px 3px;
+} 
+
+.header__theme-menu-button_active {
+  outline: 1px solid rgb(var(--detail-color));
+}
+
+.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+  outline: 1px solid rgba(var(--detail-color), 0.5);  
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid rgb(var(--detail-color));
+}
+
+.header__title {
+  font-family: var(--main-font);
+  font-weight: var(--bold-font);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  grid-column: 1 / 5;
+  grid-row: 2;
+  line-height: 83%;
+}
+
+.header__paragraph {
+  grid-column: 1 / 5;
+  grid-row: 3;
+  align-self: center;
+  margin-bottom: 12px;
+}
+
+.main-info {
+  padding: 40px var(--main-gap);
+  display: grid;
+  gap: 50px;
+  background-color: var(--background-color);
+}
+
+.main-section {
+  display: grid;
+  gap: 20px;
+  line-height: 1.3;
+}
+
+.gallery-section {
+  display: grid;
+  gap: var(--main-gap);
+}
+
+.question {
+  font-family: var(--main-font);
+  font-weight: var(--bold-font);
+  font-size: var(--font-size);
+  color: rgb(var(--detail-color));
+}
+
+.title-decor {
+  font-family: var(--main-font);
+  font-weight: var(--bold-font);
+  font-size: var(--font-size);
+  color: var(--answers-color);
+  background-color: var(--accent-color);
+}
+
+.answer-list {
+  display: grid;
+  gap: var(--main-gap-tablet);
+}
+
+.list-item {
+  display: grid;
+  gap: var(--main-gap);
+}
+
+.answer-list > h4 {
+  font-weight: var(--regular-font);
+}
+
+.answer__text {
+  font-family: var(--main-font);
+  font-weight: var(--regular-font);
+  font-size: var(--font-size);
+  color: var(--text-color);
+}
+
+.answer__link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+}
+
+.answer__link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--text-color);
+  cursor: pointer;
+}
+
+.answer__link:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--main-gap);
+}
+
+.gallery__item {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: var(--background-color);
+  block-size: 100vh;
+  min-height: 668px;
+  display: grid;
+  position: relative;
+}
+
+.footer::before, 
+.footer::after {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border: 1px solid rgb(var(--detail-color));
+}
+
+.footer::before {
+  top: var(--main-gap);
+  right: var(--main-gap);
+  border-left: none;
+  border-bottom: none;
+}
+
+.footer::after {
+  bottom: var(--main-gap);
+  left: var(--main-gap);
+  border-right: none;
+  border-top: none;
+}
+
+.footer__title {
+  align-self: center;
+  justify-self: center;
+  font-family: var(--main-font);
+  font-weight: var(--bold-font);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+  line-height: 83%;
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-auto .rec-element {
+    display: none;
+  }
+}
+
+
+@media (width >= 768px) {
+  .header {
+    min-height: 1024px;
+    padding: var(--main-gap-tablet);
+}
+
+  .header::before {
+    top: var(--main-gap-tablet);
+    right: var(--main-gap-tablet);
+}
+
+  .header::after {
+    bottom: var(--main-gap-tablet);
+    left: var(--main-gap-tablet);
+}
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    position: relative;
+    inset-inline-start: calc(-2 * var(--main-gap));
+}
+
+  .rec-element {
+    top: var(--main-gap-tablet);
+    right: 30px;
+}
+
+  .header__theme-menu {
+    justify-self: end;
+    margin-top: var(--main-gap);
+}
+
+  .header__paragraph {
+    grid-column: 3 / 5;
+    margin-left: -5px;
+}
+
+  .main-info {
+    padding: 60px calc(2 * var(--main-gap));
+    gap: 80px;
+  }
+
+  .main-section {
+    display: grid;
+    gap: var(--main-gap-tablet);
+  }
+
+  .odd-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .even-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .odd-section .answer-list {
+    grid-column: 2;
+  }
+
+  .even-section .answer-list {
+    grid-column: 1 / 3;
+  }
+
+  .question {
+    grid-column: 1;
+  }
+
+  .section__subtitle {
+    align-self: start;
+  }
+
+  .gallery {
+    display: grid;
+    gap: var(--main-gap-tablet);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .gallery__item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery__item:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .gallery__item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .gallery__item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2 / 4
+  }
+
+  .gallery__item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .gallery__item:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+
+  .footer {
+  min-height: 1024px;
+}
+
+  .footer::before {
+    top: var(--main-gap-tablet);
+    right: var(--main-gap-tablet);
+  }
+
+  .footer::after {
+    bottom: var(--main-gap-tablet);
+    left: var(--main-gap-tablet);
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+}
+
+  .header__theme-menu {
+    margin: 0;
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: start;
+}
+
+  .header__theme-menu-list {
+    display: flex;
+  }
+
+  .odd-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .odd-section .answer-list {
+    grid-column: 2 / 4;
+  }
+
+  .even-section .answer-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .even-section .list-item:nth-of-type(1) {
+    grid-column: 1;
+    align-self: start;
+  }
+
+  .even-section .list-item:nth-of-type(2) {
+    grid-column: 2;
+    align-self: start;
+  }
+
+  .even-section .list-item:nth-of-type(3) {
+    grid-column: 3;
+    align-self: start;
+  }
+
+  .footer {
+  min-height: 768px;
+  }
 }
