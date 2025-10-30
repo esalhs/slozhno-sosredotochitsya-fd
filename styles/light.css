@@ -5,18 +5,14 @@
 */
 
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
   --cover-image: url("../images/cover-image-light.png");
-  --title-color: #FFC2E6;
+  --title-color: #ffc2e6;
   --text-color: #353430;
   --detail-color: 53, 52, 48;
   --answers-color: #353430;
-  --accent-color: #FF8DCB;
-  --background-color: #FFF1F7;
-  --main-font: 'IBM Plex mono', monospace;
+  --accent-color: #ff8dcb;
+  --background-color: #fff1f7;
+  --main-font: "IBM Plex mono", monospace;
   --bold-font: 700;
   --regular-font: 400;
   --font-size: 18px;
@@ -26,18 +22,18 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-  --cover-image: url("../images/cover-image-light.png");
-  --title-color: #FFC2E6;
-  --text-color: #353430;
-  --detail-color: 53, 52, 48;
-  --answers-color: #353430;
-  --accent-color: #FF8DCB;
-  --background-color: #FFF1F7;
-  --main-font: 'IBM Plex mono', monospace;
-  --bold-font: 700;
-  --regular-font: 400;
-  --font-size: 18px;
-  --main-gap: 10px;
-  --main-gap-tablet: 20px;
-}
+    --cover-image: url("../images/cover-image-light.png");
+    --title-color: #ffc2e6;
+    --text-color: #353430;
+    --detail-color: 53, 52, 48;
+    --answers-color: #353430;
+    --accent-color: #ff8dcb;
+    --background-color: #fff1f7;
+    --main-font: "IBM Plex mono", monospace;
+    --bold-font: 700;
+    --regular-font: 400;
+    --font-size: 18px;
+    --main-gap: 10px;
+    --main-gap-tablet: 20px;
+  }
 }
