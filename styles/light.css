@@ -36,4 +36,8 @@
     --main-gap: 10px;
     --main-gap-tablet: 20px;
   }
+
+  .theme-auto .rec-element {
+    display: none;
+  }
 }
